@@ -31,7 +31,7 @@ def generate():
         flash('Recuerda dar un caracter positivo')
         return redirect((url_for('index')))
     
-    if (_check == []):
+    if (_check == [] or _check == ['1','2','3','4']):
         chars = Mayus + Minus + Digits + Especial
     elif (_check ==['1']): #Solo numeros
         chars = Digits
@@ -53,7 +53,7 @@ def generate():
         chars = Mayus + Especial
     elif (_check == ['3','4']): # Minisculas + Caracteres especiales 
         chars = Minus + Especial
-    elif (_check == ['1','2','3']):
+    elif (_check == ['1','2','3']): #Digitos + Mayusculas + Minusculas
         chars = Digits + Mayus + Minus
     elif (_check == ['1','2','4']):
         chars = Digits + Mayus + Especial
