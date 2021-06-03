@@ -29,8 +29,8 @@ def generate():
     Digits = list(string.digits) # [1]
     Especial = list(string.punctuation) #[4]
 
-    if num < 1:
-        flash('Recuerda dar un caracter positivo')
+    if num < 1 or num > 32:
+        flash('Recuerda dar un numero Valido')
         return redirect((url_for('index')))
     
     if (_check == [] or _check == ['1','2','3','4']):
