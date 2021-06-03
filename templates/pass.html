@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Generador</title>
+</head>
+
+<body>
+    <br />
+    <div class="container">
+        <form method="post" action="/generate" enctype="multipart/form-data">
+            <div class="card">
+                <div class="card-header">
+                    Generador de contraseñas
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Contraseña generada exitosamente</h5>
+                    <p class="card-text">
+                    <div class="form-group">
+                        <p id="copyme" for="txtPass">{{password}}</p>
+                    </div>
+                    <div class="form-group">
+                        <a href="{{url_for('index')}}" class="btn btn-primary">Regresar</a> |
+                        <a class="btn btn-primary" href="#" onClick = "clip_div('copyme')">Copiar al portapapeles</a>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    function clip_text(a_string){
+    var input = document.createElement('input')
+    input.id="__copyText__";
+    input.value = a_string; // OOPS! document.getElementById(divId).innerText;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    var txt = input.value
+    input.remove()
+    console.log("OK COPIED: '"+txt+"'")
+}
+function clip_div(divId){
+   return clip_text(document.getElementById(divId).innerText)
+}
+</script>
+</html>

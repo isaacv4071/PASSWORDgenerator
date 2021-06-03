@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Generador</title>
+</head>
+<style type="text/css">
+    .checkbox-inline{
+        margin-block-start: 20px;
+        margin-block-end: 20px;
+        margin-right: 40px;
+    }
+    </style>
+<body>
+    <br />
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+        <a href="{{url_for('index')}}" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {% for message in messages %}
+            <strong>{{message}}</strong>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+    <form method="post" action="/generate" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                Generador de contraseñas
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Generar</h5>
+                <p class="card-text">
+                <div class="form-group">
+                    <label for="txtNum">Numero de caracteres</label>
+                    <input id="txtNum" class="form-control" type="text" name="txtNum">
+                </div>
+                <div class="form-group text-center">
+                    <label id="check1" class="checkbox-inline get_value"><input type="checkbox" value="1" name="check"> Numeros</label>
+                    <label id="check2" class="checkbox-inline get_value"><input type="checkbox" value="2" name="check"> Mayúsculas</label>
+                    <label id="check3" class="checkbox-inline get_value"><input type="checkbox" value="3" name="check"> Minúsculas</label>
+                    <label id="check4" class="checkbox-inline get_value"><input type="checkbox" value="4" name="check"> Caracteres especiales</label>
+                </div>
+                <div class="form-group" align="center">
+                    <input type="submit" class="btn btn-success" value="Generar">
+                </div>
+                </p>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
