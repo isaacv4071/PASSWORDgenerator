@@ -13,7 +13,15 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
     #varibles que traemos del index.html
-    length = request.form['txtNum']
+    try:
+        length = request.form['txtNum']
+        if length == '':
+            flash('Recuerda dar el numero de caracteres')
+            return redirect((url_for('index')))
+        num = int(length)
+    except:
+        flash('Ne debes usar letras')
+        return redirect((url_for('index')))
     _check = request.form.getlist('check')
     #variables para generar contraseñas
     Mayus = list(string.ascii_uppercase) #[2]
@@ -21,12 +29,6 @@ def generate():
     Digits = list(string.digits) # [1]
     Especial = list(string.punctuation) #[4]
 
-    #condicional para validar entrada de un valor
-    if length == '':
-        flash('Recuerda dar el numero de caracteres')
-        return redirect((url_for('index')))
-    #condicional para validar que el valor sea positivo
-    num = int(length)
     if num < 1:
         flash('Recuerda dar un caracter positivo')
         return redirect((url_for('index')))
