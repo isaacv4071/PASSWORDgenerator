@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/estilo.css') }}" media="screen" />
     <title>Generador</title>
 </head>
@@ -40,7 +43,13 @@
                     <label id="check4" class="checkbox-inline get_value"><input type="checkbox" value="4" name="check"> Caracteres especiales</label>
                 </div>
                 <div class="form-group" align="center">
-                    <input type="submit" class="btn btn-success" value="Generar">
+                    <button type="submit" class="btn btn-success">
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />                            
+                          </svg>
+                          <span>Generar</span>
+                    </button>
                 </div>
                 </p>
             </div>
