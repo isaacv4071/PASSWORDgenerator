@@ -30,6 +30,7 @@ python app.py
 * [Python 3.7.3](https://www.python.org/downloads/release/python-370/)
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 
-## Autor ✒️
+## Autores ✒️
 
 * [isaacv4071](https://github.com/isaacv4071)
+* [JoseGonzalez-git](https://github.com/JoseGonzalez-git)
