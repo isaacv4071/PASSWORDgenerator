@@ -49,6 +49,7 @@
         margin-block-start: 20px;
         margin-block-end: 20px;
         margin-right: 40px;
+        margin-left: 40px;
     }
     input[type="checkbox"]{
         position: relative;
@@ -89,8 +90,8 @@
         outline: none;
         transition: 1s ease-in-out;
         overflow: hidden;
-        padding: 0;
         margin-right:10px ;
+        padding: 8px;
       }
       svg {
         position: absolute;
@@ -101,7 +102,6 @@
         stroke-dasharray: 150 480;
         stroke-dashoffset: 150;
         transition: 1s ease-in-out;
-        
       }
       .btn:hover {
         transition: 1s ease-in-out;
@@ -116,9 +116,24 @@
         color: white;
         font-size: 30px;
       }
-      
+
+      .btns{
+          border-radius: 20px;
+          border: 1px solid greenyellow;
+          padding: 10px 50px;
+          margin: 10px;
+          text-decoration: none;
+          color: white;
+      }
     /*Retoques*/
     .form-group{
         margin: 0;
         padding: 10px;
     }
+
+    @media screen and (max-width: 320px) {
+        .card-footer{
+          height: 70px;
+        }
+    }
+
