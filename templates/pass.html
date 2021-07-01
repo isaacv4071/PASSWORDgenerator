@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/estilo.css') }}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/pass.css') }}" media="screen" />
     <title>Generador</title>
 </head>
 
@@ -15,19 +17,38 @@
         <form method="post" action="/generate" enctype="multipart/form-data">
             <div class="card">
                 <div class="card-header">
-                    Generador de contraseñas
+                    Contraseña generada exitosamente
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Contraseña generada exitosamente</h5>
+                <div class="card_body">
+                    
                     <p class="card-text">
                     <div class="form-group">
                         <p id="copyme" for="txtPass">{{password}}</p>
                     </div>
                     <div class="form-group">
-                        <a href="{{url_for('index')}}" class="btn btn-primary">Regresar</a> |
-                        <a class="btn btn-primary" href="#" onClick = "clip_div('copyme')">Copiar al portapapeles</a>
+                        <button href="{{url_for('index')}}" class="btn btn-primary">
+                            <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                                <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                                <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />                           
+                            </svg>
+                            <span> Regresar</span>
+                        </button>
+                        <button class="btn btn-primary" href="#" onClick = "clip_div('copyme')">
+                            <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                                <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                                <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />                            
+                            </svg>
+                            <span>Copiar</span>
+                        </button>
                     </div>
                     </p>
+                </div>
+                <div class="card-footer">
+                    
+                    <p>Developed by <a href="https://github.com/isaacv4071" target="_blank" rel="github">@isaacv4071</a></p>
+                    <p> &#169 Copyrigtht</p>
+                    <p>Desing by <a href="https://github.com/JoseGonzalez-git" target="_blank" rel="github"> @JoseGonzalez-git</a></p>
+                    
                 </div>
             </div>
         </form>
